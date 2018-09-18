@@ -12,17 +12,25 @@ class CachedImageView: UIImageView {
     
     static let imageCache = NSCache<AnyObject, AnyObject>()
     
-    var imageEndPoint: String?
+    var imageEndPoint: String? {
+        didSet {
+            if let endPoint = imageEndPoint {
+                loadImage(from: endPoint)
+            }
+        }
+    }
     
-    let activityIndicatorView: UIActivityIndicatorView = {
+    private let activityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         aiv.translatesAutoresizingMaskIntoConstraints = false
-        aiv.startAnimating()
         return aiv
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func layoutSubviews() {
+        self.contentMode = .scaleAspectFill
+        self.layer.masksToBounds = true
+        
+        activityIndicatorView.removeFromSuperview()
         
         addSubview(activityIndicatorView)
         NSLayoutConstraint.activate([
@@ -30,16 +38,16 @@ class CachedImageView: UIImageView {
             activityIndicatorView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             ])
         
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    func loadImage(from endPoint: String) {
+        activityIndicatorView.startAnimating()
         
-        self.imageEndPoint = endPoint
+        if let endPoint = imageEndPoint {
+            loadImage(from: endPoint)
+        }
+    }
+    
+    private func loadImage(from endPoint: String) {
+        
+//        self.imageEndPoint = endPoint
 
         if let imageFromCache = type(of: self).imageCache.object(forKey: endPoint as AnyObject) as? UIImage {
             self.image = imageFromCache
