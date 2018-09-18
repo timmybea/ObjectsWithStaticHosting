@@ -13,6 +13,9 @@
 		B08F749A21501A0300CABB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B08F749921501A0300CABB8A /* Assets.xcassets */; };
 		B08F749D21501A0300CABB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08F749B21501A0300CABB8A /* LaunchScreen.storyboard */; };
 		B08F74A521501E2800CABB8A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08F74A421501E2800CABB8A /* Person.swift */; };
+		B08F74A92150227F00CABB8A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08F74A82150227F00CABB8A /* APIService.swift */; };
+		B08F74AB215029F800CABB8A /* JSONPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08F74AA215029F800CABB8A /* JSONPayload.swift */; };
+		B0A1066E215182A300FBF8D7 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A1066D215182A300FBF8D7 /* CachedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		B08F749C21501A0300CABB8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B08F749E21501A0300CABB8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B08F74A421501E2800CABB8A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		B08F74A82150227F00CABB8A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B08F74AA215029F800CABB8A /* JSONPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPayload.swift; sourceTree = "<group>"; };
+		B0A1066D215182A300FBF8D7 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +64,13 @@
 			children = (
 				B08F749221501A0100CABB8A /* AppDelegate.swift */,
 				B08F749421501A0100CABB8A /* ViewController.swift */,
+				B08F74A72150226C00CABB8A /* service */,
 				B08F74A621501E2E00CABB8A /* model */,
 				B08F749621501A0100CABB8A /* Main.storyboard */,
 				B08F749921501A0300CABB8A /* Assets.xcassets */,
 				B08F749B21501A0300CABB8A /* LaunchScreen.storyboard */,
 				B08F749E21501A0300CABB8A /* Info.plist */,
+				B0A1066D215182A300FBF8D7 /* CachedImageView.swift */,
 			);
 			path = ObjectsWithStaticHosting;
 			sourceTree = "<group>";
@@ -71,8 +79,17 @@
 			isa = PBXGroup;
 			children = (
 				B08F74A421501E2800CABB8A /* Person.swift */,
+				B08F74AA215029F800CABB8A /* JSONPayload.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		B08F74A72150226C00CABB8A /* service */ = {
+			isa = PBXGroup;
+			children = (
+				B08F74A82150227F00CABB8A /* APIService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +165,9 @@
 			files = (
 				B08F74A521501E2800CABB8A /* Person.swift in Sources */,
 				B08F749521501A0100CABB8A /* ViewController.swift in Sources */,
+				B0A1066E215182A300FBF8D7 /* CachedImageView.swift in Sources */,
+				B08F74A92150227F00CABB8A /* APIService.swift in Sources */,
+				B08F74AB215029F800CABB8A /* JSONPayload.swift in Sources */,
 				B08F749321501A0100CABB8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
