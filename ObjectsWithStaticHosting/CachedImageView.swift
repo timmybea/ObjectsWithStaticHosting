@@ -46,8 +46,6 @@ class CachedImageView: UIImageView {
     }
     
     private func loadImage(from endPoint: String) {
-        
-//        self.imageEndPoint = endPoint
 
         if let imageFromCache = type(of: self).imageCache.object(forKey: endPoint as AnyObject) as? UIImage {
             self.image = imageFromCache

@@ -48,8 +48,8 @@ struct Person : Decodable {
     
     static func getPeople(from json: Data) -> [Person] {
         
-        if let person = try? JSONDecoder().decode(Person.self, from: json) {
-            self.people.append(person)
+        if let payload = try? JSONDecoder().decode(JSONPayload.self, from: json) {
+            self.people = payload.people
             return self.people
         } else {
             print("couldn't create payload")

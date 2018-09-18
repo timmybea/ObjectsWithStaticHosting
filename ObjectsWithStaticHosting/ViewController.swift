@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 
             if let unwrappedData = data {
                 
-                print("Data String: \(String(data: unwrappedData, encoding: .utf8)!)")
+//                print("Data String: \(String(data: unwrappedData, encoding: .utf8)!)")
 
                 self.people = Person.getPeople(from: unwrappedData)
             }

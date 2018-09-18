@@ -33,12 +33,9 @@ struct APIService {
     
     enum APIServiceError: Error {
         case noData
-        case failedToCreateImageFromData
     }
     
     static func fetchData(with apiURL: APIURL, completion: @escaping (Data?, Error?) -> ()) {
-        
-//        print(apiURL.path)
         
         URLSession.shared.dataTask(with: apiURL.url ) { (data, response, error) in
             
@@ -51,7 +48,6 @@ struct APIService {
                 completion(nil, APIServiceError.noData)
                 return
             }
-            
             
             completion(unwrapData, nil)
             
